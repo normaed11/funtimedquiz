@@ -11,20 +11,27 @@
 
 <body>
     <div id="timer">
-        Timer: <span id="seconds"></span>
+        Timer: <span id="seconds">75</span>
     </div>
     <div id="quiz">
         <button id="startbutton" onclick="startQuiz()">Start Quiz</button>
         <div id="question1">
             <div class="question">what your name______</div>
             <div class="options">
-                <div class="option" onclick="isCorrect(false)">A</div>
-                <div class="option" onclick="isCorrect(false)">B</div>
-                <div class="option" onclick="isCorrect(true)">C</div>
-                <div class="option" onclick="isCorrect(false)">D</div>
+                <div class="option" onclick="isCorrect(1,false)">A</div>
+                <div class="option" onclick="isCorrect(1,false)">B</div>
+                <div class="option" onclick="isCorrect(1,true)">C</div>
+                <div class="option" onclick="isCorrect(1,false)">D</div>
             </div>
         </div>
         <div id="question2">
+            <div class="question">what age______</div>
+            <div class="options">
+                <div class="option" onclick="isCorrect(2,true)">A</div>
+                <div class="option" onclick="isCorrect(2,false)">B</div>
+                <div class="option" onclick="isCorrect(2,false)">C</div>
+                <div class="option" onclick="isCorrect(2,false)">D</div>
+            </div>
         </div>
         <div id="question3">
         </div>
@@ -32,6 +39,8 @@
         </div>
         <div id="question5">
         </div>
+        <hr>
+        <span id="result"></span>
     </div>
 
     <script src="./assets/js/script.js"></script>

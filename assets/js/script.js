@@ -12,12 +12,11 @@
 
 //Button Timer on 75
 var timer = 75;
-// Starts timer and quiz questions
+// Starts timer and shows first quiz question
 function startQuiz() {
     startTimer();
     document.getElementById("question1").style.display = "block";
     document.getElementById("startbutton").style.display = "none";
-
 }
 // decrease timer by one every second and display
 function startTimer() {
@@ -25,4 +24,18 @@ function startTimer() {
         timer = timer - 1;
         document.getElementById("seconds").innerText = timer;
     }, 1000);
+}
+// Display Incorrect or Correct and move to next question
+function isCorrect(question, correct) {
+    if (correct == false) {
+        timer = timer - 15;
+        document.getElementById("result").innerHTML = "Incorrect";
+    }
+    else {
+        document.getElementById("result").innerHTML = "Correct";
+    }
+    var next = question + 1;
+    document.getElementById("question" + question).style.display = "none";
+    document.getElementById("question" + next).style.display = "block";
+
 }
