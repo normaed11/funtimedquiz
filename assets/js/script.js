@@ -10,15 +10,16 @@
 // WHEN the game is over
 // THEN I can save my initials and score
 
-//Start Quiz Button Timer
+//Button Timer on 75
 var timer = 75;
+// Starts timer and quiz questions
 function startQuiz() {
     startTimer();
-
 }
+// decrease timer by one every second and display
 function startTimer() {
     var countdown = setInterval(function () {
         timer = timer - 1;
-        console.log(timer);
+        document.getElementById("seconds").innerText = timer;
     }, 1000);
 }
