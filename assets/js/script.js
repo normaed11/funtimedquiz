@@ -15,6 +15,9 @@ var timer = 75;
 // Starts timer and quiz questions
 function startQuiz() {
     startTimer();
+    document.getElementById("question1").style.display = "block";
+    document.getElementById("startbutton").style.display = "none";
+
 }
 // decrease timer by one every second and display
 function startTimer() {

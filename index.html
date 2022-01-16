@@ -5,15 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/css/style.css" rel="stylesheet">
     <title>Fun Timed Quiz</title>
 </head>
 
 <body>
     <div id="timer">
-        Timer: <div id="seconds"></div>
+        Timer: <span id="seconds"></span>
     </div>
     <div id="quiz">
-        <button onclick="startQuiz()">Start Quiz</button>
+        <button id="startbutton" onclick="startQuiz()">Start Quiz</button>
+        <div id="question1">
+            <div class="question">what your name______</div>
+            <div class="options">
+                <div class="option" onclick="isCorrect(false)">A</div>
+                <div class="option" onclick="isCorrect(false)">B</div>
+                <div class="option" onclick="isCorrect(true)">C</div>
+                <div class="option" onclick="isCorrect(false)">D</div>
+            </div>
+        </div>
+        <div id="question2">
+        </div>
+        <div id="question3">
+        </div>
+        <div id="question4">
+        </div>
+        <div id="question5">
+        </div>
     </div>
 
     <script src="./assets/js/script.js"></script>
