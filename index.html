@@ -14,30 +14,95 @@
         Timer: <span id="seconds">75</span>
     </div>
     <div id="quiz">
-        <button id="startbutton" onclick="startQuiz()">Start Quiz</button>
+        <div id="startpage">
+            <div class="question">
+                Coding Quiz Challenge
+            </div>
+
+            <div>
+                Try to answer the following code-realtes questions within the time limit.
+                Keep in mind that incorrect answers will pendaliza your score timer
+                by ten seconds!
+            </div>
+            <button id="startbutton" onclick="startQuiz()">Start Quiz</button>
+        </div>
         <div id="question1">
-            <div class="question">what your name______</div>
+            <div class="question">1. String values must be enclosed within_____when being assigned to variables.</div>
             <div class="options">
-                <div class="option" onclick="isCorrect(1,false)">A</div>
-                <div class="option" onclick="isCorrect(1,false)">B</div>
-                <div class="option" onclick="isCorrect(1,true)">C</div>
-                <div class="option" onclick="isCorrect(1,false)">D</div>
+                <div class="option" onclick="isCorrect(1,false)">A. Commas</div>
+                <div class="option" onclick="isCorrect(1,true)">B. Curly Brackets</div>
+                <div class="option" onclick="isCorrect(1,false)">C. Quotes</div>
+                <div class="option" onclick="isCorrect(1,false)">D. Parenthesis</div>
             </div>
         </div>
         <div id="question2">
-            <div class="question">what age______</div>
+            <div class="question">2. A very useful tool uaed during development and debugging for printing contest to
+                the
+                debugger is:</div>
             <div class="options">
-                <div class="option" onclick="isCorrect(2,true)">A</div>
-                <div class="option" onclick="isCorrect(2,false)">B</div>
-                <div class="option" onclick="isCorrect(2,false)">C</div>
-                <div class="option" onclick="isCorrect(2,false)">D</div>
+                <div class="option" onclick="isCorrect(2,false)">A. JavaScript</div>
+                <div class="option" onclick="isCorrect(2,false)">B. Terminal/Bash</div>
+                <div class="option" onclick="isCorrect(2,false)">C. For Loops</div>
+                <div class="option" onclick="isCorrect(2,true)">D. Console.Log</div>
             </div>
         </div>
         <div id="question3">
+            <div class="question">3. A very useful tool uaed during development and debugging for printing contest to
+                the
+                debugger is:</div>
+            <div class="options">
+                <div class="option" onclick="isCorrect(3,false)">A. JavaScript</div>
+                <div class="option" onclick="isCorrect(3,false)">B. Terminal/Bash</div>
+                <div class="option" onclick="isCorrect(3,false)">C. For Loops</div>
+                <div class="option" onclick="isCorrect(3,true)">D. Console.Log</div>
+            </div>
         </div>
         <div id="question4">
+            <div class="question">4. A very useful tool uaed during development and debugging for printing contest to
+                the
+                debugger is:</div>
+            <div class="options">
+                <div class="option" onclick="isCorrect(4,false)">A. JavaScript</div>
+                <div class="option" onclick="isCorrect(4,false)">B. Terminal/Bash</div>
+                <div class="option" onclick="isCorrect(4,false)">C. For Loops</div>
+                <div class="option" onclick="isCorrect(4,true)">D. Console.Log</div>
+            </div>
         </div>
         <div id="question5">
+            <div class="question">5. A very useful tool uaed during development and debugging for printing contest to
+                the
+                debugger is:</div>
+            <div class="options">
+                <div class="option" onclick="isCorrect(5,false)">A. JavaScript</div>
+                <div class="option" onclick="isCorrect(5,false)">B. Terminal/Bash</div>
+                <div class="option" onclick="isCorrect(5,false)">C. For Loops</div>
+                <div class="option" onclick="isCorrect(5,true)">D. Console.Log</div>
+            </div>
+        </div>
+
+        <div id="gameoverpage">
+            <div class="question">
+                All done!
+            </div>
+            <div id="pagescore">
+            </div>
+            <div>
+                Enter Initials:
+                <input id="initials">
+                <button onclick="submitScore()">Submit</button>
+            </div>
+        </div>
+        <div id="scorespage">
+            <div class="question">
+                High Scores</div>
+            <div id="scores">
+            </div>
+            <button onclick="restart()">
+                Go Back
+            </button>
+            <button onclick="clearScores()">
+                Clear High Scores
+            </button>
         </div>
         <hr>
         <span id="result"></span>

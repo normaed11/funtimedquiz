@@ -16,14 +16,24 @@ var timer = 75;
 function startQuiz() {
     startTimer();
     document.getElementById("question1").style.display = "block";
-    document.getElementById("startbutton").style.display = "none";
+    document.getElementById("startpage").style.display = "none";
 }
 // decrease timer by one every second and display
+var ms = 0;
+var countdown;
 function startTimer() {
-    var countdown = setInterval(function () {
-        timer = timer - 1;
+    countdown = setInterval(function () {
+        ms = ms + 100;
+        if (ms % 1000 == 0) {
+            timer = timer - 1;
+        }
         document.getElementById("seconds").innerText = timer;
-    }, 1000);
+        if (timer <= 0) {
+            timer = 0;
+            gameOver();
+        }
+    }, 100);
+
 }
 // Display Incorrect or Correct and move to next question
 function isCorrect(question, correct) {
@@ -36,6 +46,17 @@ function isCorrect(question, correct) {
     }
     var next = question + 1;
     document.getElementById("question" + question).style.display = "none";
-    document.getElementById("question" + next).style.display = "block";
+    if (next > 5) {
+        gameOver();
+    }
+    else {
+        document.getElementById("question" + next).style.display = "block";
+    }
+}
+function gameOver() {
+    var score = timer;
+    clearInterval(countdown);
+
+    document.getElementById("gameoverpage").style.display = "block";
 
 }
