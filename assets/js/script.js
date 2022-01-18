@@ -60,3 +60,17 @@ function gameOver() {
     document.getElementById("gameoverpage").style.display = "block";
 
 }
+function submitScore() {
+    var initials = document.getElementById("initials").value;
+    document.getElementById("gameoverpage").style.display = "none";
+    document.getElementById("scorespage").style.display = "block";
+
+}
+function restart() {
+    document.getElementById("scorespage").style.display = "none";
+    document.getElementById("startpage").style.display = "block";
+    timer = 75;
+}
+function clearScores() {
+
+}
