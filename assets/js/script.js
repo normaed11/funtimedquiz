@@ -57,13 +57,16 @@ function isCorrect(question, correct) {
     }
     else {
         document.getElementById("question" + next).style.display = "block";
+
     }
 }
+// Shows game over page and stops timer
 function gameOver() {
     clearInterval(countdown);
     document.getElementById("seconds").innerText = timer;
     document.getElementById("gameoverpage").style.display = "block";
 }
+// Puts scores into array, sorts and displays it
 function submitScore() {
     var initials = document.getElementById("initials").value;
     var score = timer;
@@ -75,19 +78,16 @@ function submitScore() {
     scores.sort(function (a, b) {
         return b.score - a.score;
     });
+    document.getElementById("scores").innerHTML = "";
     for (var i = 1; i < scores.length + 1; i++) {
         var div = document.createElement("div");
         div.innerHTML = "<b>" + i + "</b> " + scores[i - 1].initials + " - " + scores[i - 1].score;
-
+        document.getElementById("scores").appendChild(div);
     }
-
-
-
-
-
     document.getElementById("gameoverpage").style.display = "none";
     document.getElementById("scorespage").style.display = "block";
 }
+// Shows start page and resets timer
 function restart() {
     document.getElementById("scorespage").style.display = "none";
     document.getElementById("startpage").style.display = "block";
@@ -95,6 +95,8 @@ function restart() {
     document.getElementById("seconds").innerText = timer;
 
 }
+// Clear scores
 function clearScores() {
-
-}
+    document.getElementById("scores").innerHTML = "";
+    scores = []
+} 
