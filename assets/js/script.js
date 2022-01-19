@@ -10,6 +10,9 @@
 // WHEN the game is over
 // THEN I can save my initials and score
 
+
+// Score
+var scores = [];
 //Button Timer on 75
 var timer = 75;
 // Starts timer and shows first quiz question
@@ -38,12 +41,15 @@ function startTimer() {
 // Display Incorrect or Correct and move to next question
 function isCorrect(question, correct) {
     if (correct == false) {
-        timer = timer - 15;
+        timer = timer - 10;
         document.getElementById("result").innerHTML = "Incorrect";
     }
     else {
         document.getElementById("result").innerHTML = "Correct";
     }
+    setTimeout(function () {
+        document.getElementById("result").innerHTML = "";
+    }, 2000);
     var next = question + 1;
     document.getElementById("question" + question).style.display = "none";
     if (next > 5) {
@@ -54,22 +60,40 @@ function isCorrect(question, correct) {
     }
 }
 function gameOver() {
-    var score = timer;
     clearInterval(countdown);
-
+    document.getElementById("seconds").innerText = timer;
     document.getElementById("gameoverpage").style.display = "block";
-
 }
 function submitScore() {
     var initials = document.getElementById("initials").value;
+    var score = timer;
+    var object = {
+        "initials": initials,
+        "score": score
+    };
+    scores.push(object);
+    scores.sort(function (a, b) {
+        return b.score - a.score;
+    });
+    for (var i = 1; i < scores.length + 1; i++) {
+        var div = document.createElement("div");
+        div.innerHTML = "<b>" + i + "</b> " + scores[i - 1].initials + " - " + scores[i - 1].score;
+
+    }
+
+
+
+
+
     document.getElementById("gameoverpage").style.display = "none";
     document.getElementById("scorespage").style.display = "block";
-
 }
 function restart() {
     document.getElementById("scorespage").style.display = "none";
     document.getElementById("startpage").style.display = "block";
     timer = 75;
+    document.getElementById("seconds").innerText = timer;
+
 }
 function clearScores() {
 
