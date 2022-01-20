@@ -43,9 +43,11 @@ function isCorrect(question, correct) {
     if (correct == false) {
         timer = timer - 10;
         document.getElementById("result").innerHTML = "Incorrect";
+        document.getElementById("result").style.color = "red";
     }
     else {
         document.getElementById("result").innerHTML = "Correct";
+        document.getElementById("result").style.color = "green";
     }
     setTimeout(function () {
         document.getElementById("result").innerHTML = "";
@@ -64,6 +66,10 @@ function isCorrect(question, correct) {
 function gameOver() {
     clearInterval(countdown);
     document.getElementById("seconds").innerText = timer;
+    var pages = document.querySelectorAll("#quiz>div");
+    for (var i = 0; i < pages.length; i++) {
+        pages[i].style.display = "none";
+    }
     document.getElementById("gameoverpage").style.display = "block";
 }
 // Puts scores into array, sorts and displays it
