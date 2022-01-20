@@ -87,16 +87,31 @@ function submitScore() {
     document.getElementById("gameoverpage").style.display = "none";
     document.getElementById("scorespage").style.display = "block";
 }
-// Shows start page and resets timer
-function restart() {
+// If: Shows start page and resets timer
+// else: goes back to previous page
+function goBack(restart) {
     document.getElementById("scorespage").style.display = "none";
-    document.getElementById("startpage").style.display = "block";
-    timer = 75;
-    document.getElementById("seconds").innerText = timer;
-
+    if (restart) {
+        document.getElementById("startpage").style.display = "block";
+        timer = 75;
+        document.getElementById("seconds").innerText = timer;
+    } else {
+        document.getElementsByClassName("previous")[0].style.display = "block";
+        document.getElementsByClassName("previous")[0].classList.remove("previous");
+        document.getElementById("backbutton").setAttribute("onclick", "goBack(true)");
+    }
 }
 // Clear scores
 function clearScores() {
     document.getElementById("scores").innerHTML = "";
     scores = []
-} 
+}
+// View Scores and hide current page
+function viewScores() {
+    var current = document.querySelector("#quiz>div[style*='display: block']");
+    current.classList.add("previous");
+    current.style.display = "none";
+    document.getElementById("backbutton").setAttribute("onclick", "goBack(false)");
+    document.getElementById("scorespage").style.display = "block";
+
+}

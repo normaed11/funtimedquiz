@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <div id="viewscores" onclick="viewScores()">
+        View High Scores
+    </div>
     <div id="timer">
         Timer: <span id="seconds">75</span>
     </div>
@@ -91,7 +94,7 @@
                 High Scores</div>
             <div id="scores">
             </div>
-            <button onclick="restart()">
+            <button id="backbutton" onclick="goBack(true)">
                 Go Back
             </button>
             <button onclick="clearScores()">
